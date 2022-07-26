@@ -1,0 +1,31 @@
+% Base packages required for all documents irrespective of their cls.
+
+% Packages and macros go here
+\usepackage{lipsum}
+\usepackage{amsfonts}
+\usepackage{amsopn}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{algorithmic}
+\ifpdf
+  \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg}
+\else
+  \DeclareGraphicsExtensions{.eps}
+\fi
+
+
+% Prevent itemized lists from running into the left margin inside theorems and proofs
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=.5in}
+\setlist[itemize]{leftmargin=.5in}
+
+% for listings
+\usepackage{listings}
+\definecolor{commentz}{RGB}{0,128,0} % dark green
+\definecolor{stringz}{RGB}{255,0,0}  % red
+\definecolor{keywordz}{RGB}{0,0,255} % blue
+\definecolor{bgz}{rgb}{0.95,0.95,0.95}
+
+% set listing style globally
+\lstdefinestyle{mystyle}{backgroundcolor=\color{bgz}, commentstyle=\color{commentz}, stringstyle=\color{stringz}, keywordstyle=\color{keywordz}, basicstyle=\footnotesize\ttfamily, numbersep=5pt, frame=lines, breaklines=true, showstringspaces=false, upquote=true, tabsize=2}
+\lstset{style=mystyle}
